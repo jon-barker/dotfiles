@@ -1,3 +1,12 @@
+wget http://ethanschoonover.com/solarized/files/solarized.zip
+unzip solarized.zip
+mkdir ~/.vim/colors
+mv solarized/vim-colors-solarized/colors/solarized.vim ~/.vim/colors
+curl https://raw.github.com/seebi/dircolors-solarized/master/dircolors.256dark > ~/.dircolors
+source ~/.bashrc
+rm -r solarized
+rm solarized.zip
+
 rm -rf ~/.vim/bundle/Vundle.vim/
 
 cp vimrc ~/.vimrc
