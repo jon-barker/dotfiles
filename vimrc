@@ -24,8 +24,17 @@ Plugin 'scrooloose/syntastic'
 
 Plugin 'jiangmiao/auto-pairs'
 
+Plugin 'altercation/vim-colors-solarized'
+
 " All plugins must be added before the following line
 call vundle#end()
+
+syntax enable
+let g:colarized_termtrans=1
+let g:solarized_visibility="high"
+let g:solarized_contrast="high"
+set background=dark
+colorscheme solarized
 
 map <C-t> :NERDTreeToggle<CR>
 
@@ -131,4 +140,3 @@ if filereadable(expand("~/.vimrc.bundles"))
 end
 
 filetype plugin indent on
-
