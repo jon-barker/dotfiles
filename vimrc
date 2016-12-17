@@ -33,6 +33,7 @@ syntax enable
 let g:colarized_termtrans=1
 let g:solarized_visibility="high"
 let g:solarized_contrast="high"
+set t_Co=256
 set background=dark
 colorscheme solarized
 
