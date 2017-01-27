@@ -13,6 +13,8 @@ cp tmux.conf ~/.tmux.conf
 cp dircolors ~/.dircolors
 eval `dircolors ~/.dircolors`
 cp bashrc ~/.bashrc
+cp xmodmap ~/.xmodmap
+cp xinitrc ~/.xinitrc
 
 git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 vim +PluginInstall +qall
@@ -21,3 +23,4 @@ export TERM="screen-256color"
 alias tmux="tmux -2"
 
 source ~/.bashrc
+xmodmap ~/.xmodmap
