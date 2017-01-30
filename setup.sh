@@ -15,7 +15,7 @@ eval `dircolors ~/.dircolors`
 cp bashrc ~/.bashrc
 cp xmodmap ~/.Xmodmap
 cp xinitrc ~/.xinitrc
-cp bash_aliases ~/bash_aliases
+cp bash_aliases ~/.bash_aliases
 
 git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 vim +PluginInstall +qall
