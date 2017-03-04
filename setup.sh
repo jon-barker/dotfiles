@@ -24,6 +24,3 @@ vim +PluginInstall +qall
 
 export TERM="screen-256color"
 alias tmux="tmux -2"
-
-cd ~
-source .bashrc
