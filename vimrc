@@ -14,12 +14,11 @@ Plugin 'VundleVim/Vundle.vim'
 
 Plugin 'haya14busa/incsearch.vim'
 Plugin 'tpope/vim-fugitive' | Plugin 'bling/vim-airline'
-
 Plugin 'scrooloose/nerdtree'
 Plugin 'christoomey/vim-tmux-navigator'
 Plugin 'https://github.com/christoomey/vim-tmux-runner'
 Plugin 'christoomey/vim-run-interactive'
-
+Plugin 'Vimjas/vim-python-pep8-indent'
 Plugin 'scrooloose/syntastic'
 
 Plugin 'jiangmiao/auto-pairs'
@@ -36,6 +35,7 @@ let g:solarized_contrast="high"
 set t_Co=256
 set background=dark
 colorscheme solarized
+let g:airline_powerline_fonts=1
 
 map <C-t> :NERDTreeToggle<CR>
 
@@ -141,3 +141,4 @@ if filereadable(expand("~/.vimrc.bundles"))
 end
 
 filetype plugin indent on
+set guifont=Liberation\ Mono\ for\ Powerline\ 10
