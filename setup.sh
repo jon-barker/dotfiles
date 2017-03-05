@@ -2,6 +2,8 @@ cd ~/src
 git clone https://github.com/powerline/fonts
 cd fonts
 ./install.sh
+
+cd ~/dotfiles
 wget http://ethanschoonover.com/solarized/files/solarized.zip
 unzip solarized.zip
 mkdir ~/.vim/colors
