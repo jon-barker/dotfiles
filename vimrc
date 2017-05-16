@@ -13,16 +13,15 @@ call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
 
 Plugin 'haya14busa/incsearch.vim'
-Plugin 'tpope/vim-fugitive' | Plugin 'bling/vim-airline'
+Plugin 'tpope/vim-fugitive'
+Plugin 'bling/vim-airline'
 Plugin 'scrooloose/nerdtree'
 Plugin 'christoomey/vim-tmux-navigator'
 Plugin 'https://github.com/christoomey/vim-tmux-runner'
 Plugin 'christoomey/vim-run-interactive'
 Plugin 'Vimjas/vim-python-pep8-indent'
 Plugin 'scrooloose/syntastic'
-
 Plugin 'jiangmiao/auto-pairs'
-
 Plugin 'altercation/vim-colors-solarized'
 
 " All plugins must be added before the following line
@@ -37,7 +36,9 @@ set background=dark
 colorscheme solarized
 let g:airline_powerline_fonts=1
 
-map <C-t> :NERDTreeToggle<CR>
+map <C-t> :NERDTreeToggle %<CR>
+let g:NERDTreeWinSize    = 50     " Default NERDTree window size
+let g:NERDTreeQuitOnOpen = 1      " Close NERDTree window after opening file
 
 set backspace=2    " Backspace deletes like most programs in insert mode
 set nobackup
@@ -60,6 +61,7 @@ set wildmode=list:longest,full
 set gdefault       " no need to type /g at the end of search / replace
 set ignorecase     " case insensitive searching (unless specified)
 set smartcase      " If a search term contains an upper case letter then that is used
+
 set hlsearch    
 nnoremap <silent> <leader>, :noh<cr> " Stop highlighting after searching
 set incsearch

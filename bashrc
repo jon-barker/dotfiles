@@ -107,8 +107,7 @@ if [ -f /etc/bash_completion ] && ! shopt -oq posix; then
 fi
 
 export LD_LIBRARY_PATH=usr/local/lib:/usr/local/cuda/lib64:/usr/local/cuda/lib
-export PATH=/usr/local/cuda/bin:/home/moriarty/src/caffe_luke/build/tools:/home/moriarty/bin:$PATH
-export PYTHONPATH=/home/moriarty/src/caffe_luke/python
+export PATH=/usr/local/cuda/bin:/home/jbarker/bin:$PATH
 
 export TERM="screen-256color"
 alias tmux="tmux -2"
