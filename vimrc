@@ -23,6 +23,7 @@ Plugin 'Vimjas/vim-python-pep8-indent'
 Plugin 'scrooloose/syntastic'
 Plugin 'jiangmiao/auto-pairs'
 Plugin 'altercation/vim-colors-solarized'
+Plugin 'vim-autopep8/ftplugin'
 
 " All plugins must be added before the following line
 call vundle#end()
@@ -144,3 +145,6 @@ end
 
 filetype plugin indent on
 set guifont=Liberation\ Mono\ for\ Powerline\ 10
+
+nnoremap <C-n> :noh<CR>
+
