@@ -19,11 +19,11 @@ Plugin 'scrooloose/nerdtree'
 Plugin 'christoomey/vim-tmux-navigator'
 Plugin 'https://github.com/christoomey/vim-tmux-runner'
 Plugin 'christoomey/vim-run-interactive'
-Plugin 'Vimjas/vim-python-pep8-indent'
+" Plugin 'Vimjas/vim-python-pep8-indent'
+Plugin 'andviro/flake8-vim'
 Plugin 'scrooloose/syntastic'
 Plugin 'jiangmiao/auto-pairs'
 Plugin 'altercation/vim-colors-solarized'
-Plugin 'vim-autopep8/ftplugin'
 
 " All plugins must be added before the following line
 call vundle#end()
@@ -40,6 +40,9 @@ let g:airline_powerline_fonts=1
 map <C-t> :NERDTreeToggle %<CR>
 let g:NERDTreeWinSize    = 50     " Default NERDTree window size
 let g:NERDTreeQuitOnOpen = 1      " Close NERDTree window after opening file
+
+let g:PyFlakeOnWrite = 1
+let g:PyFlakeCheckers = 'pep8,mccabe,frosted'
 
 set backspace=2    " Backspace deletes like most programs in insert mode
 set nobackup
