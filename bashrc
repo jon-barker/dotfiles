@@ -111,3 +111,5 @@ export PATH=/usr/local/cuda/bin:/home/jbarker/bin:$PATH
 
 export TERM="screen-256color"
 alias tmux="tmux -2"
+
+source ~/.bash_prompt
