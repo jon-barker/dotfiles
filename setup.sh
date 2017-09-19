@@ -20,6 +20,7 @@ cp dircolors ~/.dircolors
 eval `dircolors ~/.dircolors`
 cp bashrc ~/.bashrc
 cp bash_aliases ~/.bash_aliases
+cp bash_prompt ~/.bash_prompt
 
 git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 vim +PluginInstall +qall
@@ -28,3 +29,4 @@ export TERM="screen-256color"
 alias tmux="tmux -2"
 
 source ~/.bashrc
+source ~/.bashprompt
