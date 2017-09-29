@@ -24,6 +24,7 @@ Plugin 'andviro/flake8-vim'
 Plugin 'scrooloose/syntastic'
 Plugin 'jiangmiao/auto-pairs'
 Plugin 'altercation/vim-colors-solarized'
+Plugin 'Valloric/YouCompleteMe'
 
 " All plugins must be added before the following line
 call vundle#end()
