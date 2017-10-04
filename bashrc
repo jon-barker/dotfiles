@@ -69,6 +69,16 @@ xterm*|rxvt*)
     ;;
 esac
 
+# Function to set gnome-terminal tab title
+function set-title() {
+      if [[ -z "$ORIG"  ]]; then
+              ORIG=$PS1
+                fi
+                  TITLE="\[\e]2;$*\a\]"
+                    PS1=${ORIG}${TITLE}
+
+}
+
 # enable color support of ls and also add handy aliases
 if [ -x /usr/bin/dircolors ]; then
     test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
