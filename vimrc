@@ -25,7 +25,6 @@ Plugin 'scrooloose/syntastic'
 Plugin 'jiangmiao/auto-pairs'
 Plugin 'altercation/vim-colors-solarized'
 Plugin 'davidhalter/jedi-vim'
-Plugin 'Valloric/YouCompleteMe'
 
 " All plugins must be added before the following line
 call vundle#end()
@@ -42,8 +41,9 @@ let g:airline_powerline_fonts=1
 map <C-t> :NERDTreeToggle %<CR>
 let g:NERDTreeWinSize    = 50     " Default NERDTree window size
 let g:NERDTreeQuitOnOpen = 1      " Close NERDTree window after opening file
+autocmd VimEnter * set winfixwidth
 
-let g:PyFlakeOnWrite = 1
+let g:PyFlakeOnWrite = 0
 let g:PyFlakeCheckers = 'pep8,mccabe,frosted'
 
 set backspace=2    " Backspace deletes like most programs in insert mode
