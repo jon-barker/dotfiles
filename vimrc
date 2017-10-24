@@ -26,6 +26,7 @@ Plugin 'jiangmiao/auto-pairs'
 Plugin 'altercation/vim-colors-solarized'
 Plugin 'davidhalter/jedi-vim'
 Plugin 'airblade/vim-gitgutter'
+Plugin 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all'  }
 
 " All plugins must be added before the following line
 call vundle#end()
@@ -163,3 +164,4 @@ filetype plugin indent on
 set guifont=Liberation\ Mono\ for\ Powerline\ 10
 
 nnoremap <C-n> :noh<CR>
+map ,t :FZF ~<CR>
