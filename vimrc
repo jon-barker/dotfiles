@@ -12,6 +12,7 @@ call vundle#begin()
 " let Vundle manage Vundle, required
 Plugin 'VundleVim/Vundle.vim'
 
+" Vundle plugins
 Plugin 'haya14busa/incsearch.vim'
 Plugin 'tpope/vim-fugitive'
 Plugin 'bling/vim-airline'
@@ -19,17 +20,18 @@ Plugin 'scrooloose/nerdtree'
 Plugin 'christoomey/vim-tmux-navigator'
 Plugin 'https://github.com/christoomey/vim-tmux-runner'
 Plugin 'christoomey/vim-run-interactive'
-" Plugin 'Vimjas/vim-python-pep8-indent'
 Plugin 'andviro/flake8-vim'
 Plugin 'scrooloose/syntastic'
 Plugin 'jiangmiao/auto-pairs'
 Plugin 'altercation/vim-colors-solarized'
 Plugin 'davidhalter/jedi-vim'
-Plugin 'Valloric/YouCompleteMe'
+Plugin 'airblade/vim-gitgutter'
+Plugin 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all'  }
 
 " All plugins must be added before the following line
 call vundle#end()
 
+" Solarized colorscheme and powerline fonts
 syntax enable
 let g:colarized_termtrans=1
 let g:solarized_visibility="high"
@@ -39,11 +41,15 @@ set background=dark
 colorscheme solarized
 let g:airline_powerline_fonts=1
 
+" NERDTree file browser
 map <C-t> :NERDTreeToggle %<CR>
-let g:NERDTreeWinSize    = 50     " Default NERDTree window size
-let g:NERDTreeQuitOnOpen = 1      " Close NERDTree window after opening file
+let g:NERDTreeWinSize    = 50      " Default NERDTree window size
+let g:NERDTreeQuitOnOpen = 1       " Close NERDTree window after opening file
+autocmd VimEnter * set winfixwidth " Fixes a resizing issue when open/close NERDTree
 
-let g:PyFlakeOnWrite = 1
+" PyFlake
+map <C-P> :PyFlake<CR>
+let g:PyFlakeOnWrite = 0
 let g:PyFlakeCheckers = 'pep8,mccabe,frosted'
 
 set backspace=2    " Backspace deletes like most programs in insert mode
@@ -68,7 +74,7 @@ set gdefault       " no need to type /g at the end of search / replace
 set ignorecase     " case insensitive searching (unless specified)
 set smartcase      " If a search term contains an upper case letter then that is used
 
-set hlsearch    
+set hlsearch
 nnoremap <silent> <leader>, :noh<cr> " Stop highlighting after searching
 set incsearch
 set showmatch
@@ -121,7 +127,13 @@ autocmd FocusGained * call ToggleRelativeOn()
 autocmd InsertEnter * call ToggleRelativeOn()
 autocmd InsertLeave * call ToggleRelativeOn()
 
-" Use ener to create new lines w/o entering insert mode
+" GitGutter styling to use · instead of +/-
+let g:gitgutter_sign_added = '∙'
+let g:gitgutter_sign_modified = '∙'
+let g:gitgutter_sign_removed = '∙'
+let g:gitgutter_sign_modified_removed = '∙'
+
+" Use enter to create new lines w/o entering insert mode
 nnoremap <CR> o<Esc>
 "Below is to fix issues with the ABOVE mappings in quickfix window
 autocmd CmdwinEnter * nnoremap <CR> <CR>
@@ -152,4 +164,4 @@ filetype plugin indent on
 set guifont=Liberation\ Mono\ for\ Powerline\ 10
 
 nnoremap <C-n> :noh<CR>
-
+map ,t :FZF ~<CR>
