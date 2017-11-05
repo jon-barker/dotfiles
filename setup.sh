@@ -11,6 +11,9 @@ mv solarized/vim-colors-solarized/colors/solarized.vim ~/.vim/colors
 curl https://raw.github.com/seebi/dircolors-solarized/master/dircolors.256dark > ~/.dircolors
 rm -r solarized
 rm solarized.zip
+git clone https://github.com/romainl/Apprentice
+cp Apprentice/colors/apprentice.vim ~/.vim/colors
+rm -rf Apprentice
 
 rm -rf ~/.vim/bundle/Vundle.vim/
 

@@ -23,7 +23,7 @@ Plugin 'christoomey/vim-run-interactive'
 Plugin 'andviro/flake8-vim'
 Plugin 'scrooloose/syntastic'
 Plugin 'jiangmiao/auto-pairs'
-Plugin 'altercation/vim-colors-solarized'
+"Plugin 'altercation/vim-colors-solarized'
 " Plugin 'davidhalter/jedi-vim'
 Plugin 'airblade/vim-gitgutter'
 Plugin 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all'  }
@@ -34,11 +34,12 @@ call vundle#end()
 " Solarized colorscheme and powerline fonts
 syntax enable
 let g:colarized_termtrans=1
-let g:solarized_visibility="high"
-let g:solarized_contrast="high"
+"let g:solarized_visibility="high"
+"let g:solarized_contrast="high"
 set t_Co=256
 set background=dark
-colorscheme solarized
+"colorscheme solarized
+colorscheme apprentice
 let g:airline_powerline_fonts=1
 
 " Map leader to TAB
