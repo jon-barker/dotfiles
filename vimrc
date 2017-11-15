@@ -20,13 +20,11 @@ Plugin 'scrooloose/nerdtree'
 Plugin 'christoomey/vim-tmux-navigator'
 Plugin 'https://github.com/christoomey/vim-tmux-runner'
 Plugin 'christoomey/vim-run-interactive'
-Plugin 'andviro/flake8-vim'
 Plugin 'scrooloose/syntastic'
 Plugin 'jiangmiao/auto-pairs'
-"Plugin 'altercation/vim-colors-solarized'
-" Plugin 'davidhalter/jedi-vim'
 Plugin 'airblade/vim-gitgutter'
 Plugin 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all'  }
+Plugin 'https://github.com/python-mode/python-mode'
 
 " All plugins must be added before the following line
 call vundle#end()
@@ -71,9 +69,9 @@ let g:NERDTreeQuitOnOpen = 1       " Close NERDTree window after opening file
 autocmd VimEnter * set winfixwidth " Fixes a resizing issue when open/close NERDTree
 
 " PyFlake
-map <C-P> :PyFlake<CR>
-let g:PyFlakeOnWrite = 0
-let g:PyFlakeCheckers = 'pep8,mccabe,frosted'
+"map <C-P> :PyFlake<CR>
+"let g:PyFlakeOnWrite = 0
+"let g:PyFlakeCheckers = 'pep8,mccabe,frosted'
 
 set backspace=2    " Backspace deletes like most programs in insert mode
 set nobackup

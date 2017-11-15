@@ -4,13 +4,7 @@ cd fonts
 ./install.sh
 
 cd ~/dotfiles
-wget http://ethanschoonover.com/solarized/files/solarized.zip
-unzip solarized.zip
 mkdir ~/.vim/colors
-mv solarized/vim-colors-solarized/colors/solarized.vim ~/.vim/colors
-curl https://raw.github.com/seebi/dircolors-solarized/master/dircolors.256dark > ~/.dircolors
-rm -r solarized
-rm solarized.zip
 git clone https://github.com/romainl/Apprentice
 cp Apprentice/colors/apprentice.vim ~/.vim/colors
 rm -rf Apprentice

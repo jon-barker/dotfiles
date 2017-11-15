@@ -18,8 +18,7 @@ alias cd..='cd ..'
 alias lshw='sudo lshw'
 alias ifstat='ifstat -nt'
 alias pwrstat='sudo pwrstat'
-alias vpn='~/src/anyconnect-4.2.04018/vpn/vpn'
-alias nv='curl -s "http://download.finance.yahoo.com/d/quotes.csv?s=nvda&f=l1"'
+alias vpnc='sudo openconnect ngvpn01.nvidia.com -u jbarker -b'
 
 #-->Custom Commands
 alias ubuntu.custom.update='sudo aptitude update ; sudo aptitude -f full-upgrade ; sudo aptitude autoclean'
