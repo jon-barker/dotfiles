@@ -15,7 +15,7 @@ Plugin 'VundleVim/Vundle.vim'
 " Vundle plugins
 Plugin 'haya14busa/incsearch.vim'
 Plugin 'tpope/vim-fugitive'
-Plugin 'bling/vim-airline'
+Plugin 'vim-airline/vim-airline'
 Plugin 'scrooloose/nerdtree'
 Plugin 'christoomey/vim-tmux-navigator'
 Plugin 'https://github.com/christoomey/vim-tmux-runner'
@@ -24,21 +24,16 @@ Plugin 'scrooloose/syntastic'
 Plugin 'jiangmiao/auto-pairs'
 Plugin 'airblade/vim-gitgutter'
 Plugin 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all'  }
-Plugin 'https://github.com/python-mode/python-mode'
 
 " All plugins must be added before the following line
 call vundle#end()
 
-" Solarized colorscheme and powerline fonts
+" Apprentice colorscheme
 syntax enable
 let g:colarized_termtrans=1
-"let g:solarized_visibility="high"
-"let g:solarized_contrast="high"
 set t_Co=256
 set background=dark
-"colorscheme solarized
 colorscheme apprentice
-let g:airline_powerline_fonts=1
 
 " Map leader to TAB
 let mapleader = "\<tab>"
@@ -182,7 +177,6 @@ if filereadable(expand("~/.vimrc.bundles"))
 end
 
 filetype plugin indent on
-set guifont=Liberation\ Mono\ for\ Powerline\ 10
 
 nnoremap <C-n> :noh<CR>
 map ,t :FZF ~<CR>

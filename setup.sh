@@ -1,8 +1,3 @@
-cd ~/src
-git clone https://github.com/powerline/fonts
-cd fonts
-./install.sh
-
 cd ~/dotfiles
 mkdir ~/.vim/colors
 git clone https://github.com/romainl/Apprentice
