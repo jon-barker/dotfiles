@@ -1,4 +1,3 @@
-set encoding=utf-8
 " Type :so % to refresh .vimrc after making changes
 
 " Use Vim settings, rather than Vi settings.  This setting must be as early as
@@ -13,33 +12,65 @@ call vundle#begin()
 " let Vundle manage Vundle, required
 Plugin 'VundleVim/Vundle.vim'
 
+" Vundle plugins
 Plugin 'haya14busa/incsearch.vim'
-Plugin 'tpope/vim-fugitive' | Plugin 'bling/vim-airline'
-
+Plugin 'haya14busa/incsearch-fuzzy.vim'
+Plugin 'tpope/vim-fugitive'
+Plugin 'vim-airline/vim-airline'
 Plugin 'scrooloose/nerdtree'
 Plugin 'christoomey/vim-tmux-navigator'
 Plugin 'https://github.com/christoomey/vim-tmux-runner'
 Plugin 'christoomey/vim-run-interactive'
-
 Plugin 'scrooloose/syntastic'
-
 Plugin 'jiangmiao/auto-pairs'
+Plugin 'airblade/vim-gitgutter'
+Plugin 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all'  }
+Plugin 'davidhalter/jedi-vim'
+Plugin 'fs111/pydoc.vim'
 
-Plugin 'altercation/vim-colors-solarized'
 
 " All plugins must be added before the following line
 call vundle#end()
 
+" Apprentice colorscheme
 syntax enable
 let g:colarized_termtrans=1
-let g:solarized_visibility="high"
-let g:solarized_contrast="high"
 set t_Co=256
 set background=dark
-colorscheme solarized
-let g:airline_powerline_fonts = 1
+colorscheme apprentice
 
-map <C-t> :NERDTreeToggle<CR>
+" Map leader to TAB
+let mapleader = "\<tab>"
+" Enable the list of buffers
+let g:airline#extensions#tabline#enabled = 1
+" Show just the filename
+let g:airline#extensions#tabline#fnamemod = ':t'"
+" This allows buffers to be hidden if you've modified a buffer.
+" This is almost a must if you wish to use buffers in this way.
+set hidden
+" To open a new empty buffer
+" This replaces :tabnew which I used to bind to this mapping
+nmap <leader>T :enew<cr>
+" Move to the next buffer
+nmap <leader>l :bnext<CR>
+" Move to the previous buffer
+nmap <leader>h :bprevious<CR>
+" Close the current buffer and move to the previous one
+" This replicates the idea of closing a tab
+nmap <leader>bq :bp <BAR> bd #<CR>
+" Show all open buffers and their status
+nmap <leader>bl :ls<CR>
+
+" NERDTree file browser
+map <C-t> :NERDTreeToggle %<CR>
+let g:NERDTreeWinSize    = 50      " Default NERDTree window size
+let g:NERDTreeQuitOnOpen = 1       " Close NERDTree window after opening file
+autocmd VimEnter * set winfixwidth " Fixes a resizing issue when open/close NERDTree
+
+" PyFlake
+"map <C-P> :PyFlake<CR>
+"let g:PyFlakeOnWrite = 0
+"let g:PyFlakeCheckers = 'pep8,mccabe,frosted'
 
 set backspace=2    " Backspace deletes like most programs in insert mode
 set nobackup
@@ -62,9 +93,16 @@ set wildmode=list:longest,full
 set gdefault       " no need to type /g at the end of search / replace
 set ignorecase     " case insensitive searching (unless specified)
 set smartcase      " If a search term contains an upper case letter then that is used
-set hlsearch    
+
+set hlsearch
 nnoremap <silent> <leader>, :noh<cr> " Stop highlighting after searching
 set incsearch
+map / <Plug>(incsearch-forward)
+map ? <Plug>(incsearch-backward)
+map g/ <Plug>(incsearch-stay)
+map z/ <Plug>(incsearch-fuzzy-/)
+map z? <Plug>(incsearch-fuzzy-?)
+map zg/ <Plug>(incsearch-fuzzy-stay)
 set showmatch
 
 set tabstop=4
@@ -115,7 +153,13 @@ autocmd FocusGained * call ToggleRelativeOn()
 autocmd InsertEnter * call ToggleRelativeOn()
 autocmd InsertLeave * call ToggleRelativeOn()
 
-" Use ener to create new lines w/o entering insert mode
+" GitGutter styling to use · instead of +/-
+let g:gitgutter_sign_added = '∙'
+let g:gitgutter_sign_modified = '∙'
+let g:gitgutter_sign_removed = '∙'
+let g:gitgutter_sign_modified_removed = '∙'
+
+" Use enter to create new lines w/o entering insert mode
 nnoremap <CR> o<Esc>
 "Below is to fix issues with the ABOVE mappings in quickfix window
 autocmd CmdwinEnter * nnoremap <CR> <CR>
@@ -143,3 +187,12 @@ if filereadable(expand("~/.vimrc.bundles"))
 end
 
 filetype plugin indent on
+filetype plugin on
+
+nnoremap <C-n> :noh<CR>
+map ,t :FZF ~<CR>
+
+" Prevent JEDI from doing suggestions on typing a .
+let g:jedi#popup_on_dot = 0
+
+set completeopt-=preview

@@ -14,6 +14,7 @@ Plugin 'VundleVim/Vundle.vim'
 
 " Vundle plugins
 Plugin 'haya14busa/incsearch.vim'
+Plugin 'haya14busa/incsearch-fuzzy.vim'
 Plugin 'tpope/vim-fugitive'
 Plugin 'vim-airline/vim-airline'
 Plugin 'scrooloose/nerdtree'
@@ -24,6 +25,9 @@ Plugin 'scrooloose/syntastic'
 Plugin 'jiangmiao/auto-pairs'
 Plugin 'airblade/vim-gitgutter'
 Plugin 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all'  }
+Plugin 'davidhalter/jedi-vim'
+Plugin 'fs111/pydoc.vim'
+
 
 " All plugins must be added before the following line
 call vundle#end()
@@ -93,6 +97,12 @@ set smartcase      " If a search term contains an upper case letter then that is
 set hlsearch
 nnoremap <silent> <leader>, :noh<cr> " Stop highlighting after searching
 set incsearch
+map / <Plug>(incsearch-forward)
+map ? <Plug>(incsearch-backward)
+map g/ <Plug>(incsearch-stay)
+map z/ <Plug>(incsearch-fuzzy-/)
+map z? <Plug>(incsearch-fuzzy-?)
+map zg/ <Plug>(incsearch-fuzzy-stay)
 set showmatch
 
 set tabstop=4
@@ -177,6 +187,12 @@ if filereadable(expand("~/.vimrc.bundles"))
 end
 
 filetype plugin indent on
+filetype plugin on
 
 nnoremap <C-n> :noh<CR>
 map ,t :FZF ~<CR>
+
+" Prevent JEDI from doing suggestions on typing a .
+let g:jedi#popup_on_dot = 0
+
+set completeopt-=preview
