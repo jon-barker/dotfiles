@@ -5,6 +5,9 @@
 set nocompatible
 filetype off
 
+" Set path
+set path+=**
+
 " set the runtime path to include Vundle and initialize
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
@@ -24,7 +27,7 @@ Plugin 'christoomey/vim-run-interactive'
 Plugin 'scrooloose/syntastic'
 Plugin 'jiangmiao/auto-pairs'
 Plugin 'airblade/vim-gitgutter'
-Plugin 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all'  }
+" Plugin 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all'  }
 Plugin 'davidhalter/jedi-vim'
 Plugin 'fs111/pydoc.vim'
 
