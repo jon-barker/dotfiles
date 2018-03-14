@@ -199,3 +199,5 @@ map ,t :FZF ~<CR>
 let g:jedi#popup_on_dot = 0
 
 set completeopt-=preview
+
+command! MakeTags !ctags -R .
