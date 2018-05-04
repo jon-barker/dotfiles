@@ -20,8 +20,11 @@ vim +PluginInstall +qall
 git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
 ~/.fzf/install
 
+sudo apt-get install exuberant-ctags
+
 export TERM="screen-256color"
+
 alias tmux="tmux -2"
 
 source ~/.bashrc
-source ~/.bashprompt
+source ~/.bash_prompt

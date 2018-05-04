@@ -3,7 +3,7 @@
 " Use Vim settings, rather than Vi settings.  This setting must be as early as
 " possible, as it has side effects
 set nocompatible
-filetype off
+filetype plugin on
 
 " Set path
 set path+=**
@@ -30,10 +30,16 @@ Plugin 'airblade/vim-gitgutter'
 " Plugin 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all'  }
 Plugin 'davidhalter/jedi-vim'
 Plugin 'fs111/pydoc.vim'
-
+Plugin 'majutsushi/tagbar'
+Plugin 'xolox/vim-easytags'
+Plugin 'xolox/vim-misc'
 
 " All plugins must be added before the following line
 call vundle#end()
+
+" tagbar
+nmap <F8> :TagbarToggle<CR>
+nmap <F9> :TagbarOpen j<CR>
 
 " Apprentice colorscheme
 syntax enable
@@ -41,6 +47,9 @@ let g:colarized_termtrans=1
 set t_Co=256
 set background=dark
 colorscheme apprentice
+
+" Pydoc
+let g:pydoc_window_lines=0.5
 
 " Map leader to TAB
 let mapleader = "\<tab>"
