@@ -25,6 +25,8 @@ alias ubuntu.custom.update='sudo aptitude update ; sudo aptitude -f full-upgrade
 alias mount.drobo='sudo mount /dev/sdf2 -t hfsplus -o rw /mnt/Drobo'
 alias lsd='ls -l | grep ^d'
 alias clean.config.files='sudo dpkg-query -l| grep -v "ii " | grep "rc " | awk '{print $2" "}' | tr -d "\n" | xargs sudo aptitude purge'
+alias tn='tmux new -s'
+alias ta='tmux attach -d -t'
 
 #---------VARIABLES-----------------------------
 
